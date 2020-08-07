@@ -17,12 +17,12 @@ header > form {
   margin: 20px;
   display: flex;
   justify-content: space-between;
-  max-width:400px;
+  max-width: 400px;
 }
-@media (min-width:500px){
-  header>form{
-    margin-left:auto;
-    margin-right:auto;
+@media (min-width: 500px) {
+  header > form {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 header > form > button {
@@ -42,11 +42,11 @@ header > form > input {
 main {
   margin: 20px;
 }
-@media (min-width:500px){
-  main{
-    max-width:900px;
-    margin-left:auto;
-    margin-right:auto;
+@media (min-width: 500px) {
+  main {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .site {
@@ -55,30 +55,31 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-@media (min-width:500px){
-  .site{
-    margin-right:-25px;
+@media (min-width: 500px) {
+  .site {
+    margin-right: -25px;
     justify-content: flex-start;
   }
 }
 .site > li {
   width: 160px;
-  height: 160px;
-  background:white;
+  height: 120px;
+  background: white;
   border-radius: 4px;
-  
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position:relative;
+  position: relative;
+  cursor: pointer;
 }
-@media (min-width:500px){
-  .site>li{
-    margin-right:25px;
+@media (min-width: 500px) {
+  .site > li {
+    margin-right: 25px;
   }
 }
-.a,.addbutton>div {
+.a,
+.addbutton > div {
   height: 110px;
   width: 110px;
   display: flex;
@@ -86,17 +87,17 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-.deleteIcon{
-  position:absolute;
-  top:0px;
-  right:0px;
+.deleteIcon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
-@media(min-width:500px){
-  .deleteIcon{
-    display:none;
+@media (min-width: 500px) {
+  .deleteIcon {
+    display: none;
   }
-  .sitelist:hover .deleteIcon{
-    display:block;
+  .sitelist:hover .deleteIcon {
+    display: block;
   }
 }
 .logo {
