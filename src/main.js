@@ -1,13 +1,13 @@
 let init = [
-  { logo: 'B', url: "https://baidu.com" },
-  { logo: 'T', url: "https://taobao.com" },
+  { logo: "B", url: "https://baidu.com" },
+  { logo: "T", url: "https://taobao.com" },
 ];
 let string = localStorage.getItem("x") || JSON.stringify(init);
 a = JSON.parse(string);
 a.forEach(render);
-$(".addbutton").on('click', function (e) {
+$(".addbutton").on("click", function (e) {
   let url = window.prompt("请输入要添加的网址");
-  if (url === null || url === undefined) {
+  if (url === null || url === undefined || url === "") {
     return;
   } else if (url.indexOf("https:") !== 0) {
     url = "https:" + url;
@@ -17,13 +17,12 @@ $(".addbutton").on('click', function (e) {
     localStorage.setItem("x", string);
     render(newa);
   }
-})
+});
 
 function simplifyUrl(url) {
   return url.replace("https://", "").replace("http://", "").replace("www.", "");
 }
 function render(element) {
-
   let $li = $(`<li class="sitelist">
         <div class="a">
           <div class="logo">${element.logo}</div>
@@ -33,14 +32,14 @@ function render(element) {
           </svg>
           </div>
       </li>`).insertBefore($(".addbutton"));
-  $li.on('click', function () {
+  $li.on("click", function () {
     window.open(element.url);
-  })
-  $li.on('click', '.deleteIcon', function (e) {
+  });
+  $li.on("click", ".deleteIcon", function (e) {
     $li.remove();
     let index = $li.index();
     a.splice(index, 1);
-    localStorage.setItem('x', JSON.stringify(a));
+    localStorage.setItem("x", JSON.stringify(a));
     e.stopPropagation();
-  })
+  });
 }

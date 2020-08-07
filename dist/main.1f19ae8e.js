@@ -119,19 +119,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"main.js":[function(require,module,exports) {
 var init = [{
-  logo: 'B',
+  logo: "B",
   url: "https://baidu.com"
 }, {
-  logo: 'T',
+  logo: "T",
   url: "https://taobao.com"
 }];
 var string = localStorage.getItem("x") || JSON.stringify(init);
 a = JSON.parse(string);
 a.forEach(render);
-$(".addbutton").on('click', function (e) {
+$(".addbutton").on("click", function (e) {
   var url = window.prompt("请输入要添加的网址");
 
-  if (url === null || url === undefined) {
+  if (url === null || url === undefined || url === "") {
     return;
   } else if (url.indexOf("https:") !== 0) {
     url = "https:" + url;
@@ -154,14 +154,14 @@ function simplifyUrl(url) {
 
 function render(element) {
   var $li = $("<li class=\"sitelist\">\n        <div class=\"a\">\n          <div class=\"logo\">".concat(element.logo, "</div>\n          <div class=\"url\">").concat(simplifyUrl(element.url), "</div>\n          <svg class=\"icon deleteIcon\" style=\"width:20px;height:20px\">\n            <use xlink:href=\"#icon-delete\"></use>\n          </svg>\n          </div>\n      </li>")).insertBefore($(".addbutton"));
-  $li.on('click', function () {
+  $li.on("click", function () {
     window.open(element.url);
   });
-  $li.on('click', '.deleteIcon', function (e) {
+  $li.on("click", ".deleteIcon", function (e) {
     $li.remove();
     var index = $li.index();
     a.splice(index, 1);
-    localStorage.setItem('x', JSON.stringify(a));
+    localStorage.setItem("x", JSON.stringify(a));
     e.stopPropagation();
   });
 }
@@ -193,7 +193,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57057" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53329" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
