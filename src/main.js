@@ -10,8 +10,8 @@ $(".addbutton").on("click", function (e) {
   $(e.currentTarget).css({ background: "none" });
   if (url === null || url === undefined || url === "") {
     return;
-  } else if (url.indexOf("https:") !== 0) {
-    url = "https:" + url;
+  } else if (url.indexOf("http") !== 0) {
+    url = "https://" + url;
     let newa = { logo: simplifyUrl(url)[0].toUpperCase(), url: url };
     a.push(newa);
     let string = JSON.stringify(a);

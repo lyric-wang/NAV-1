@@ -136,8 +136,8 @@ $(".addbutton").on("click", function (e) {
 
   if (url === null || url === undefined || url === "") {
     return;
-  } else if (url.indexOf("https:") !== 0) {
-    url = "https:" + url;
+  } else if (url.indexOf("http") !== 0) {
+    url = "https://" + url;
     var newa = {
       logo: simplifyUrl(url)[0].toUpperCase(),
       url: url
@@ -199,7 +199,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54949" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55275" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
