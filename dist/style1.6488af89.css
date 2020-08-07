@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  background: #eee;
+}
+header > form {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+}
+@media (min-width: 500px) {
+  header > form {
+    margin: 60px auto;
+  }
+}
+header > form > button {
+  background: #cc9999;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 8px 20px;
+  font-size: 16px;
+}
+header > form > input {
+  flex-grow: 1;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+main {
+  margin: 20px;
+}
+@media (min-width: 500px) {
+  main {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.site {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (min-width: 500px) {
+  .site {
+    margin-right: -25px;
+    justify-content: flex-start;
+  }
+}
+.site > li {
+  width: 160px;
+  height: 130px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.site > li:hover {
+  background: #ddd;
+}
+@media (min-width: 500px) {
+  .site > li {
+    margin-right: 25px;
+  }
+}
+.deleteIcon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #666;
+}
+@media (min-width: 500px) {
+  .deleteIcon {
+    display: none;
+  }
+  .sitelist:hover .deleteIcon {
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  .deleteIcon {
+    background: #cc9999;
+    border-radius: 100%;
+    color: white;
+  }
+}
+.a,
+.addbutton > div {
+  display: flex;
+  flex-direction: column; /*column后不加下面两个center，logo宽度100%*/
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+}
+.logo {
+  font-size: 56px;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background: #cc9999;
+  display: flex; /*直接text-align:center文字会按照田字格居中，宽高不是56*/
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
+}
+.url {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.iconwrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
+  background: #cc9999;
+  border-radius: 100%;
+}
+img {
+  max-width: 100%;
+}
+
+
+/*# sourceMappingURL=/style1.6488af89.css.map */

@@ -7,6 +7,7 @@ a = JSON.parse(string);
 a.forEach(render);
 $(".addbutton").on("click", function (e) {
   let url = window.prompt("请输入要添加的网址");
+  $(e.currentTarget).css({ background: "none" });
   if (url === null || url === undefined || url === "") {
     return;
   } else if (url.indexOf("https:") !== 0) {
