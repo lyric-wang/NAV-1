@@ -33,8 +33,9 @@ function render(element) {
           </svg>
           </div>
       </li>`).insertBefore($(".addbutton"));
-  $li.on("click", function () {
+  $li.on("click", function (e) {
     window.open(element.url);
+    $(e.currentTarget).css({ background: "none" });
   });
   $li.on("click", ".deleteIcon", function (e) {
     $li.remove();
