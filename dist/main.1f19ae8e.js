@@ -170,6 +170,39 @@ function render(element) {
     localStorage.setItem("x", JSON.stringify(a));
     e.stopPropagation();
   });
+  $li.on({
+    touchstart: function touchstart(e) {
+      // 长按事件触发
+      timeOutEvent = setTimeout(function () {
+        timeOutEvent = 0; //console.log("hi");
+
+        var whether = confirm("删除当前标签？");
+
+        if (whether === false) {
+          return;
+        } else {
+          $($(e.currentTarget).children().children()[2]).trigger("click", ".deleteIcon");
+        }
+      }, 400); //长按400毫秒
+      // e.preventDefault();
+    },
+    touchmove: function touchmove() {
+      clearTimeout(timeOutEvent);
+      timeOutEvent = 0;
+    },
+    touchend: function touchend(e) {
+      clearTimeout(timeOutEvent);
+
+      if (timeOutEvent != 0) {
+        // 点击事件
+        // location.href = '/a/live-rooms.html';
+        //alert("你点击了");
+        $(e.currentTarget).trigger("click");
+      }
+
+      return false;
+    }
+  });
 }
 },{}],"C:/Users/Administrator/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -199,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55275" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54474" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

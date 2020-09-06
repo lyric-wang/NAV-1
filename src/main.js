@@ -44,4 +44,38 @@ function render(element) {
     localStorage.setItem("x", JSON.stringify(a));
     e.stopPropagation();
   });
+  $li.on({
+    touchstart: function (e) {
+      // 长按事件触发
+      timeOutEvent = setTimeout(function () {
+        timeOutEvent = 0;
+        //console.log("hi");
+        let whether = confirm("删除当前标签？");
+        if (whether === false) {
+          return;
+        } else {
+          $($(e.currentTarget).children().children()[2]).trigger(
+            "click",
+            ".deleteIcon"
+          );
+        }
+      }, 400);
+      //长按400毫秒
+      // e.preventDefault();
+    },
+    touchmove: function () {
+      clearTimeout(timeOutEvent);
+      timeOutEvent = 0;
+    },
+    touchend: function (e) {
+      clearTimeout(timeOutEvent);
+      if (timeOutEvent != 0) {
+        // 点击事件
+        // location.href = '/a/live-rooms.html';
+        //alert("你点击了");
+        $(e.currentTarget).trigger("click");
+      }
+      return false;
+    },
+  });
 }

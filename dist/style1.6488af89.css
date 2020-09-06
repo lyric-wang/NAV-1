@@ -79,15 +79,18 @@ main {
     margin-right: 25px;
   }
 }
-.deleteIcon {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  color: #666;
+@media (max-width: 500px) {
+  .deleteIcon {
+    display: none;
+  }
 }
 @media (min-width: 500px) {
   .deleteIcon {
     display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #666;
   }
   .sitelist:hover .deleteIcon {
     display: block;
